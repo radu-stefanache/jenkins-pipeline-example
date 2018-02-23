@@ -31,7 +31,7 @@ pipeline {
 				error("App1 did not respond correctly.")
 			    }
 			}
-			sh 'pytest tests/tests.py'
+			sh 'pytest --junitxml results.xml tests/tests.py'
 		    }
 	        }
 	        stage('Check App2') {
@@ -44,7 +44,7 @@ pipeline {
 				error("App2 did not respond correctly.")
 			    }
 			}
-			sh 'pytest tests/tests.py'
+			sh 'pytest --junitxml results.xml tests/tests.py'
 		    }
 	        }
 	    }
